@@ -19,9 +19,9 @@ public class Main {
 
 
         public static void printPersonInfo(Person person) {
+            System.out.println("-----------------------------------------------");
             for (Field field : person.getClass().getDeclaredFields()) {
                 field.setAccessible(true);
-                System.out.println("-----------------------------------------------");
                 try {
                     if (field.isAnnotationPresent(SensitiveData.class)) {
                         System.out.println(field.getName() + ": ***");
