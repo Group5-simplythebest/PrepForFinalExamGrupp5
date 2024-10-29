@@ -7,10 +7,10 @@ public class Main {
 
         List<Person> persons = new ArrayList<>();
         persons.add(new Person("Anna", 30, "anna@example.com", "Engineer"));
-        persons.add(new Person("Bengt" 45, "bengt@example.com", "Teacher"));
-        persons.add(new Person("Karin" 60, "karin@example.com", "Doctor"));
-        persons.add(new Person("Klas" 3, "klas@example.com", "Child"));
-        persons.add(new Person("Linnea" 25, "linnea@example.com", "Singer"));
+        persons.add(new Person("Bengt", 45, "bengt@example.com", "Teacher"));
+        persons.add(new Person("Karin", 60, "karin@example.com", "Doctor"));
+        persons.add(new Person("Klas", 3, "klas@example.com", "Child"));
+        persons.add(new Person("Linnea", 25, "linnea@example.com", "Singer"));
 
         for (Person person : persons) {
             printPersonInfo(person);
