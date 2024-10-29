@@ -4,7 +4,7 @@ import java.sql.SQLOutput;
 import java.util.List;
 import java.util.Scanner;
 
-public class UserFilter extends Person{
+public class UserFilter<T> extends Person {
 
     public <T> void userSearch (List<T> list) throws IllegalAccessException {
         Scanner scanner = new Scanner(System.in);
@@ -38,6 +38,5 @@ public class UserFilter extends Person{
     public <T> void printAnything(Object object){
         System.out.println("TODO"); //TODO
     }
-
 
 }
