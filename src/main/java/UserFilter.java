@@ -1,10 +1,13 @@
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
-import java.sql.SQLOutput;
 import java.util.List;
 import java.util.Scanner;
 
 public class UserFilter<T> extends Person {
+
+    public UserFilter() {
+        super();
+    }
 
     public <T> void userSearch (List<T> list) throws IllegalAccessException {
         Scanner scanner = new Scanner(System.in);

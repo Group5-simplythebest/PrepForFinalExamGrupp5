@@ -12,6 +12,9 @@ public class Person {
         this.role = role;
     }
 
+    public Person() {
+    }
+
     @Override
     public String toString() {
         return "------USER INFO--------\n" +
