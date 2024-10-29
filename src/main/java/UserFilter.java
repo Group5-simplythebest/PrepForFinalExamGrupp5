@@ -46,7 +46,7 @@ public class UserFilter<T> extends Person {
                 System.out.println(field.getName() + ": ****");
             } else {
                 System.out.println(field.getName() + ": " + field.get(object).toString());
-            }
+            }   
         }
     }
 
