@@ -24,4 +24,20 @@ public class Person {
             "Role: " + role + "\n" +
             "-----------------------";
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getRole() {
+        return role;
+    }
 }

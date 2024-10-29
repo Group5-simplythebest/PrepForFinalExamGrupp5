@@ -1,5 +1,6 @@
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -52,4 +53,18 @@ public class UserFilter<T> extends Person {
         }
     }
 
+    public static Person search(List<Person> list, String name) {
+        Person temp;
+        temp = list.stream().filter(person -> person.getName().equalsIgnoreCase(name)).findFirst().orElse(null);
+        if (temp == null) {
+            System.out.println("Search failed no one by that name exists in the list");
+            return null;
+        }
+        return temp;
+    }
+
+    public static List<Person> sortByAge(List<Person> list) {
+        list.sort(Comparator.comparing(Person::getAge));
+        return list;
+    }
 }
