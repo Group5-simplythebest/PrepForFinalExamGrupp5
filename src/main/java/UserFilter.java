@@ -4,7 +4,7 @@ import java.sql.SQLOutput;
 import java.util.List;
 import java.util.Scanner;
 
-public class UserFilter {
+public class UserFilter extends Person{
 
     public <T> void userSearch (List<T> list) throws IllegalAccessException {
         Scanner scanner = new Scanner(System.in);
