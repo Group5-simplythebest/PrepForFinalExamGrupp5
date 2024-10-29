@@ -6,8 +6,19 @@ public class Main {
     public static void main(String[] args){
 
         List<Person> persons = new ArrayList<>();
+        persons.add(new Person("Anna", 30, "anna@example.com", "Engineer"));
+        persons.add(new Person("Bengt" 45, "bengt@example.com", "Teacher"));
+        persons.add(new Person("Karin" 60, "karin@example.com", "Doctor"));
+        persons.add(new Person("Klas" 3, "klas@example.com", "Child"));
+        persons.add(new Person("Linnea" 25, "linnea@example.com", "Singer"));
 
-        public void printPersonInfo(Person person) {
+        for (Person person : persons) {
+            printPersonInfo(person);
+        }
+        }
+
+
+        public static void printPersonInfo(Person person) {
             for (Field field : person.getClass().getDeclaredFields()) {
                 field.setAccessible(true);
                 try {
@@ -23,4 +34,3 @@ public class Main {
         }
 
     }
-}
