@@ -22,7 +22,7 @@ public class Main {
             for (Field field : person.getClass().getDeclaredFields()) {
                 field.setAccessible(true);
                 try {
-                    if (field.isAnnotationPresent(SensitiveData)) {
+                    if (field.isAnnotationPresent(SensitiveData.class)) {
                         System.out.println(field.getName() + ": ***");
                     } else {
                         System.out.println(field.getName() + ": " + field.get(person));
