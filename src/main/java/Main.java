@@ -11,11 +11,19 @@ public class Main {
         persons.add(new Person("Karin", 60, "karin@example.com", "Doctor"));
         persons.add(new Person("Klas", 3, "klas@example.com", "Child"));
         persons.add(new Person("Linnea", 25, "linnea@example.com", "Singer"));
+        UserFilter userFilter = new UserFilter<>();
 
         for (Person person : persons) {
             printPersonInfo(person);
         }
+
+        try {
+            userFilter.userSearch(persons);
+        } catch (IllegalAccessException e) {
+            System.out.println("Filter doesn't work" + e.getMessage());
         }
+        }
+
 
 
         public static void printPersonInfo(Person person) {

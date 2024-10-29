@@ -11,7 +11,7 @@ public class UserFilter<T> extends Person {
 
     public <T> void userSearch (List<T> list) throws IllegalAccessException {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Type search word: ");
+        System.out.print("--------------------------------\nSEARCH PERSON LIST\nType search word: ");
         String args = scanner.nextLine();
 
         if (list == null){
@@ -19,8 +19,6 @@ public class UserFilter<T> extends Person {
             return;
         }
 
-        ParameterizedType objectInList = (ParameterizedType) list;
-        Class<T> classOfObjectInList = (Class<T>) objectInList.getActualTypeArguments()[0];
 
         for (Object object : list) {
             Class clazz = object.getClass();
@@ -28,6 +26,7 @@ public class UserFilter<T> extends Person {
             Field[] fields = clazz.getDeclaredFields();
 
             for (Field field : fields){
+                field.setAccessible(true);
                 if (field.get(object).toString().equalsIgnoreCase(args)){
                     System.out.println("This " + clazz.getSimpleName() + " has matches the search word:");
                     printAnything(object);
