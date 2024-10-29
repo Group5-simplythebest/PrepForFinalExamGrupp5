@@ -44,7 +44,7 @@ public class UserFilter<T> extends Person {
 
         for (Field field : fields){
             field.setAccessible(true);
-            if (field.getClass().isAnnotationPresent(SensitiveData.class) ){
+            if (field.isAnnotationPresent(SensitiveData.class) ){
                 System.out.println(field.getName() + ": ****");
             } else {
                 System.out.println(field.getName() + ": " + field.get(object).toString());
