@@ -1,6 +1,7 @@
 public class Person {
     private String name;
     private int age;
+    @SensitiveData
     private String email;
     private String role;
 
