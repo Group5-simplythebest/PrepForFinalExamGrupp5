@@ -35,8 +35,19 @@ public class UserFilter<T> extends Person {
 
     }
 
-    public <T> void printAnything(Object object){
-        System.out.println("TODO"); //TODO
+    public  void printAnything(Object object) throws IllegalAccessException {
+        Class clazz = object.getClass();
+
+        Field[] fields = clazz.getDeclaredFields();
+
+        for (Field field : fields){
+            field.setAccessible(true);
+            if (field.getClass().isAnnotationPresent(SensitiveData.class) ){
+                System.out.println(field.getName() + ": ****");
+            } else {
+                System.out.println(field.getName() + ": " + field.get(object).toString());
+            }
+        }
     }
 
 }
